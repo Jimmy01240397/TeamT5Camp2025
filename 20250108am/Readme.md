@@ -10,9 +10,15 @@ Host OS: debian 12
 sudo apt install qemu-user-binfmt binfmt-support binfmtc
 ```
 
-2. Run `docker compose up -d`
+2. Check binfmt
 
-3. To shell
+```bash
+update-binfmts --display qemu-arm
+```
+
+3. Run `docker compose up -d`
+
+4. To shell
 
 ```bash
 docker compose exec firmware cbash 
