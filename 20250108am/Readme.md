@@ -12,6 +12,12 @@ sudo apt install qemu-user-binfmt binfmt-support binfmtc
 
 2. Run `docker compose up -d`
 
+3. To shell
+
+```bash
+docker compose exec firmware cbash 
+```
+
 ## Exploit
 
 ```bash
