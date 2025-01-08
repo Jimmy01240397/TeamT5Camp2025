@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  firmware:
+    image: tpra
+    build: ./firmware
+    privileged: true
+    ports:
+      - 1040:1040/udp
+    #- 20080:80
+    #- 20555:555
+    command: ["cbash","-c","/usr/bin/tddp"]
+    #command: ["sleep infinity"]

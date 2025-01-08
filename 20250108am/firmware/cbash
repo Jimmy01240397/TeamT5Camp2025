@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd /tpra/squashfs-root
+mount --bind /dev dev
+mount --bind /sys sys
+mount --bind /proc proc
+#mount --bind ../cramfs-root-0 usr/local/www
+#mount --bind ../jffs2-root conf
+chroot /tpra/squashfs-root /bin/sh "$@"
