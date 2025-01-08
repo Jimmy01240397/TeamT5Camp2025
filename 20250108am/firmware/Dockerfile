@@ -25,11 +25,9 @@ RUN dpkg --add-architecture armhf
 RUN apt update && apt install qemu-user qemu-user-static qemu-system-arm liblzo2-dev gdb-multiarch iproute2 -y
 
 COPY --from=builder /_tpra.bin.extracted/ /tpra/
-COPY ldd /tpra/squashfs-root/usr/local/bin/ldd
 
 WORKDIR /tpra/squashfs-root
 
-COPY armlinux_server usr/local/bin
 COPY cbash /usr/local/bin/cbash
 RUN chmod +x /usr/local/bin/cbash
 
